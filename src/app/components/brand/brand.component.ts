@@ -14,7 +14,7 @@ export class BrandComponent implements OnInit {
   currentBrand:Brand;
 
   constructor(private brandservice:BrandService) { }
-
+//deneme
   ngOnInit(): void {
     this.getBrands();
   }
