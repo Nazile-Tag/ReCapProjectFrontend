@@ -1,0 +1,17 @@
+<div *ngIf="car" class="card mb-3" style="max-width: 100%">
+  <img src="{{ imageUrl }}{{ car.imagePath }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Kiralık Araç</h5>
+        <ul class="list-group">
+          <li class="list-group-item"><th>Marka</th>{{car.brandName |uppercase}}</li>
+          <li class="list-group-item"><th>Model</th>{{car.modelYear}}</li>
+          <li class="list-group-item"><th>Renk</th>{{car.colorName}}</li>
+          <li class="list-group-item"><th>Araç Bilgisi</th>{{car.description}}</li>
+          <li class="list-group-item"><th>Fiyat</th>{{car.dailyPrice |currency }}</li>
+          <li class="list-group-item"><th>Kdv'li Fiyat</th>{{car.dailyPrice |vatAdded:18 |currency }}</li>
+        </ul>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <button (click)="addToCart(car)" type="button" [routerLink]="['/rental/add']" class="btn btn-secondary">Kirala</button>
+    <button routerLink="/cars" class="btn btn-secondary" style="float: right;">Geri</button>
+  </div>
+</div>  

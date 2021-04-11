@@ -1,0 +1,20 @@
+<div
+  *ngIf="dataLoaded == false"
+  class="spinner-border text-secondary"
+  role="status"
+>
+  <span class="visually-hidden">Loading...</span>
+</div>
+<ul class="list-group">
+  <li class="list-group-item list-group-item-secondary">Renkler</li>
+  <li
+    (click)="setCurrentColor(color)"
+    routerLink="cars/color/{{color.colorId}}"
+    *ngFor="let color of colors"
+    [class]="getCurrentColorClass(color)"
+    aria-current="true"
+  >
+    {{ color.colorName }}
+  </li>
+</ul>
+

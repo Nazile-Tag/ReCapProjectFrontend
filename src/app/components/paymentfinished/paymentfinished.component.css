@@ -1,0 +1,13 @@
+.alert{
+    margin-top: 200px;
+    margin-bottom: 200px;
+    padding: 100px;
+}
+
+p.first{
+    margin-top:30px;
+}
+
+p.mb-0{
+    margin-top: 30px;
+}

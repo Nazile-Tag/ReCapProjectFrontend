@@ -1,0 +1,67 @@
+<div class="content">
+  <div class="row">
+    <div class="col-4">
+      <app-brand></app-brand>
+      <app-color></app-color>
+
+    </div>
+
+
+    <div class="col-8">
+
+      <div class="mb-3">
+        <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Arama ifadesi giriniz">
+      </div>
+      
+      <div *ngIf="filterText.length > 0" class="alert alert-secondary">
+        {{filterText}} aradınız
+      </div>
+      
+      
+      
+         <div *ngFor="let car of cars | filterPipe:filterText" class="card mb-3" style="max-width: auto">
+
+
+          <div class="row">
+            <div class="col-5">
+              <img
+              src="{{ imageUrl }}{{ car.imagePath }}"
+              style="width: 300px; height: 300px; margin: 0px"
+            />
+            </div>
+
+            <div class="col-7 aracdetay">
+              <h5 class="card-title">Kiralık Araç</h5>
+              <p class="card-text">
+                {{ car.brandName | uppercase}}
+                {{ car.colorName }}
+                {{ car.modelYear }}
+              </p>
+              <p class="card-text">
+                <small class="text-muted">Detaylı bilgi için butonu tıklayınız</small>
+              </p>
+              <button type="button" routerLink="/cars/car/{{car.carId}}" class="btn btn-outline-secondary">
+                Detaylar
+              </button>
+            </div>
+          </div>
+
+
+            
+
+
+              
+
+          </div>
+
+
+
+
+
+        </div>
+      </div>
+  </div>
+
+
+
+
